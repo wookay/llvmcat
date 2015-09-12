@@ -1,0 +1,11 @@
+language: c
+notifications:
+  email: false
+before_install:
+  - sudo apt-get install llvm-3.8-dev
+script:
+  - make -f build-bc/Makefile
+  - make clean
+  - make -f build-clang/Makefile
+  - make clean
+  - make -f build-ll/Makefile
