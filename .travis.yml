@@ -1,8 +1,17 @@
 language: c
 notifications:
   email: false
-before_install:
-  - sudo apt-get install llvm-3.7
+sudo: false
+addons:
+  apt:
+    sources:
+    - llvm-toolchain-precise-3.7
+    packages:
+    - llvm-3.7
+install:
+  - if [[ "${LLVM_CONFIG}" == *3\.[7]* ]]; then export CC="gcc-4.9"; export CXX="g++-4.9"; fi
+env:
+  - LLVM_CONFIG="llvm-config-3.7"
 script:
   - make -f build-bc/Makefile
   - make clean
