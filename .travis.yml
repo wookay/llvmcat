@@ -13,8 +13,4 @@ install:
 env:
   - LLVM_CONFIG="llvm-config-3.7"
 script:
-  - make -f build-bc/Makefile
-  - make clean
   - make -f build-clang/Makefile
-  - make clean
-  - make -f build-ll/Makefile
