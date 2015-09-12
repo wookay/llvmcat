@@ -2,7 +2,7 @@ language: c
 notifications:
   email: false
 before_install:
-  - sudo apt-get install llvm-3.8-dev
+  - sudo apt-get install llvm-3.7
 script:
   - make -f build-bc/Makefile
   - make clean
